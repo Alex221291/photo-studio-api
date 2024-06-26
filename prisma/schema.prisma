@@ -1,0 +1,85 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Tariff {
+  id    String     @default(uuid()) @id
+  timeInterval   String?
+  savings     Int?
+  options     String? @db.VarChar(2000)
+  price     Float?
+}
+
+model Equipment {
+  id    String     @default(uuid()) @id
+  title     String?
+  description   String? @db.VarChar(2000)
+  picture    Picture?    @relation(fields: [pictureId], references: [id])
+  pictureId  String? @default(uuid())
+  count     String?
+}
+
+model Favor {
+  id    String     @default(uuid()) @id
+  title     String?
+  description   String? @db.VarChar(2000)
+  order     Int?
+  picture    Picture?    @relation(fields: [pictureId], references: [id])
+  pictureId  String? @default(uuid())
+}
+
+model Filming {
+  id    String     @default(uuid()) @id
+  title     String?
+  description   String? @db.VarChar(2000)
+  order     Int?
+  price     String?
+  picture    Picture?    @relation(fields: [pictureId], references: [id])
+  pictureId  String? @default(uuid())
+}
+
+model Picture {
+  id    String     @default(uuid()) @id
+  picture Bytes?
+  type    String?
+  news News[]
+  filming Filming[]
+  equipment Equipment[]
+  favor Favor[]
+  collage Collage[]
+}
+
+model News {
+  id    String     @default(uuid()) @id
+  title     String?
+  description   String? @db.VarChar(3000)
+  date DateTime @default(now()) @db.Date
+  picture    Picture?    @relation(fields: [pictureId], references: [id])
+  pictureId  String? @default(uuid())
+}
+
+model Collage {
+  id    String     @default(uuid()) @id
+  order     Int?
+  picture    Picture?    @relation(fields: [pictureId], references: [id], onDelete: Cascade)
+  pictureId  String? @default(uuid())
+  type    Type     @default(OTHER)
+}
+
+enum Type {
+  HEADER
+  FOOTER
+  FAVOR
+  OTHER
+}
