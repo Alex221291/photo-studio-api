@@ -4,4 +4,6 @@ export class UpdateFavorDto {
     readonly title?: string;
     readonly description?: string;
     readonly order?: number;
+    readonly count?: string;
+
 }

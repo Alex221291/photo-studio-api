@@ -7,4 +7,6 @@ export class UpdateNewsDto {
     readonly title?: string;
     @ApiProperty({example: 'Test', description: 'description'})
     readonly description?: string;
+    readonly subject?: string;
+    readonly time?: number;
 }

@@ -51,7 +51,6 @@ export class EquipmentService {
       data: {
         title: equipment?.title,
         description: equipment?.description,
-        count: equipment?.count,
         pictureId: picture?.id
       },
     });
@@ -95,7 +94,6 @@ export class EquipmentService {
       data: {
         title: equipment?.title,
         description: equipment?.description,
-        count: equipment?.count,
         pictureId: picture?.id
       },
     });

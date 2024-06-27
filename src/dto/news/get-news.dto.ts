@@ -11,4 +11,6 @@ export class GetNewsDto {
     readonly date?: string;
     @ApiProperty({example: 'Test', description: 'pictureId'})
     readonly pictureId?: string;
+    readonly subject?: string;
+    readonly time?: number;
 }

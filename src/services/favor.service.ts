@@ -55,6 +55,7 @@ export class FavorService {
         title: favor?.title,
         description: favor?.description,
         order: favor?.order,
+        count: favor?.count,
         pictureId: picture?.id
       },
     });
@@ -99,6 +100,7 @@ export class FavorService {
         title: favor?.title,
         description: favor?.description,
         order: favor?.order,
+        count: favor?.count,
         pictureId: picture?.id
       },
     });

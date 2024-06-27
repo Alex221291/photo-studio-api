@@ -6,4 +6,6 @@ export class GetFavorDto {
     readonly description?: string;
     readonly order?: number;
     readonly pictureId?: string;
+    readonly count?: string;
+
 }

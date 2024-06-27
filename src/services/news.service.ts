@@ -23,6 +23,8 @@ export class NewsService {
       title: answer?.title,
       description: answer?.description,
       date: answer?.date.toLocaleDateString('ru-RU').replaceAll('.', '-'),
+      subject: answer?.subject,
+      time: answer?.time,
       pictureId: answer?.pictureId,
     };
   }
@@ -38,6 +40,8 @@ export class NewsService {
         title: item?.title,
         description: item?.description,
         date: item?.date.toLocaleDateString('ru-RU').replaceAll('.', '-'),
+        subject: item?.subject,
+        time: item?.time,
         pictureId: item?.pictureId,
       }
     })
@@ -70,6 +74,8 @@ export class NewsService {
       data: {
         title: news?.title,
         description: news?.description,
+        subject: news?.subject,
+        time: news?.time,
         pictureId: picture?.id
       },
     });
@@ -113,6 +119,8 @@ export class NewsService {
       data: {
         title: news?.title,
         description: news?.description,
+        subject: news?.subject,
+        time: news?.time,
         pictureId: picture?.id
       },
     });

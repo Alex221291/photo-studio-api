@@ -18,7 +18,6 @@ CREATE TABLE "Equipment" (
     "title" TEXT,
     "description" VARCHAR(2000),
     "pictureId" TEXT,
-    "count" TEXT,
 
     CONSTRAINT "Equipment_pkey" PRIMARY KEY ("id")
 );
@@ -29,6 +28,7 @@ CREATE TABLE "Favor" (
     "title" TEXT,
     "description" VARCHAR(2000),
     "order" INTEGER,
+    "count" TEXT,
     "pictureId" TEXT,
 
     CONSTRAINT "Favor_pkey" PRIMARY KEY ("id")
@@ -61,6 +61,8 @@ CREATE TABLE "News" (
     "title" TEXT,
     "description" VARCHAR(3000),
     "date" DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "subject" TEXT,
+    "time" INTEGER,
     "pictureId" TEXT,
 
     CONSTRAINT "News_pkey" PRIMARY KEY ("id")

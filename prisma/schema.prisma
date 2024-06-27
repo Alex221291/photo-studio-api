@@ -27,7 +27,6 @@ model Equipment {
   description   String? @db.VarChar(2000)
   picture    Picture?    @relation(fields: [pictureId], references: [id])
   pictureId  String? @default(uuid())
-  count     String?
 }
 
 model Favor {
@@ -35,6 +34,7 @@ model Favor {
   title     String?
   description   String? @db.VarChar(2000)
   order     Int?
+  count     String?
   picture    Picture?    @relation(fields: [pictureId], references: [id])
   pictureId  String? @default(uuid())
 }
@@ -65,6 +65,8 @@ model News {
   title     String?
   description   String? @db.VarChar(3000)
   date DateTime @default(now()) @db.Date
+  subject String?
+  time Int?
   picture    Picture?    @relation(fields: [pictureId], references: [id])
   pictureId  String? @default(uuid())
 }
