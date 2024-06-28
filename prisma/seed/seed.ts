@@ -3,115 +3,195 @@ import * as path from 'path';
 import * as fs from 'fs';
 const prisma = new PrismaClient();
 async function main() {
-  // console.log(__dirname);
-  // await prisma.paper.updateMany({
-  //   where: { id: '17826f6b-14de-4815-83d8-b092c7381946', picture: null },
-  //   data: {
-  //     picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/kalka.png')),
-  //   }
-  // });
-  // await prisma.paper.updateMany({
-  //   where: { id: '870cd1ef-b2c8-4329-8deb-5793b5499674', picture: null },
-  //   data: {
-  //     picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/vatman.png')),
-  //   }
-  // });
-  // await prisma.paper.updateMany({
-  //   where: { id: '79ea5405-125a-4f7b-82a8-e1628870d920', picture: null },
-  //   data: {
-  //     picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/upakovka.png')),
-  //   }
-  // });
-  // await prisma.paper.updateMany({
-  //   where: { id: 'ad30ecbb-6916-45e7-92d8-f266133d9891', picture: null },
-  //   data: {
-  //     picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/pergament.png')),
-  //   }
-  // });
+
+  //Equipment
+  await prisma.picture.updateMany({
+    where: { id: '49f014c7-9c01-400c-ace6-490896838b9d', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/equipment/godox.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: '57adae36-64ab-4d77-ba70-8dd272877bac', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/equipment/fotokvant.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: 'ca97fb08-becf-4e27-8edf-5c098205809e', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/equipment/softbox.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: 'a18bfbca-f558-4b21-a15f-e6c73aed1561', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/equipment/octabox.png')),
+      type: 'image/png'
+    }
+  });
+
+  // Favor
+  await prisma.picture.updateMany({
+    where: { id: '704d7014-cc95-401d-a73e-4dbebdeaf560', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/favor/dress.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: '5cf6ccce-cd32-4982-8d8c-131d5c59ed3c', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/favor/camera.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: 'e4ac75e8-06d0-4aef-aa5f-dd4c97046034', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/favor/asistent.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: 'a8a28bb0-3d89-4050-a511-760ad1aee4af', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/favor/kreslo.png')),
+      type: 'image/png'
+    }
+  });
+
+  //Filming
+  await prisma.picture.updateMany({
+    where: { id: '382a4a5c-8555-4329-ab6e-3212d9aafdc0', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/filming/arenda.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: 'e463a386-5475-48ae-800a-4d59b49a5e4e', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/filming/dasha.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: '4916e275-059e-44d9-9c08-59d371fca9d6', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/filming/alex.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: 'af60e668-47c1-41fb-9893-0df48cb625bd', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/filming/abonument.png')),
+      type: 'image/png'
+    }
+  });
+
+  //News
+  await prisma.picture.updateMany({
+    where: { id: 'b486a497-82aa-419a-9921-b3a567fff653', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/news/news-1.png')),
+      type: 'image/png'
+    }
+  });
   
-  // await prisma.paper.updateMany({
-  //   where: { id: '8fa5219a-4da3-4c9e-8060-64b67bc1c0fa', picture: null },
-  //   data: {
-  //     picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/pergament.png')),
-  //   }
-  // });
+  //Collage-HEADER
+  await prisma.picture.updateMany({
+    where: { id: '96a5e263-4731-459b-88ce-cfffda3f53f6', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/collage/header/1.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: '08034fcd-4403-4768-81bc-c9f9828726db', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/collage/header/2.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: '8bd95fd0-9b5f-4e0d-a1b1-fff95281db5b', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/collage/header/3.png')),
+      type: 'image/png'
+    }
+  });
 
-  // await prisma.picture.updateMany({
-  //   where: { id: {
-  //     in: ['f779128e-e838-4688-b750-2ab12e41a7e3', '04f82858-b0c7-4df7-acf7-f7170af9af91', '6b7956cd-7371-483b-97fe-89903abbdb5b', 'f013b7b8-e9dc-404b-8dcf-6bc5b6427360', '13a5e1bc-62e1-4528-a7b3-e86d5a1f0c82', '7c38031d-66df-4bea-bb54-1391b386b095']
-  //   }, 
-  //   picture: null},
-  //   data: {
-  //     picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/kalka-main.png')),
-  //     type: 'image/png'
-  //   }
-  // });
+  //Collage-FAVOR
+  await prisma.picture.updateMany({
+    where: { id: 'b5c0926f-28a2-4a20-9674-999c63f009d0', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/collage/favor/1.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: 'd362daf0-53c4-4c0f-8f71-3698d72d4372', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/collage/favor/2.png')),
+      type: 'image/png'
+    }
+  });
 
-  // await prisma.picture.updateMany({
-  //   where: { id: {
-  //     in: ['e6d3054e-df9a-45be-8224-76169e145a6b', 'dce35ff5-89ea-4559-b6af-0a87934870b8', '17493f82-86fa-4b39-b6e2-303b95af9078', '07738281-47b3-48c8-aeda-f9973db7d818', 'b0af73df-d997-4784-a14c-e02a62ceb54c', 'dd7f2cd0-7ef9-498e-8657-c1059727b5a8']
-  //   }, 
-  //   picture: null},
-  //   data: {
-  //     picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/kalka-texture.png')),
-  //     type: 'image/png'
-  //   }
-  // });
-
-  // await prisma.picture.updateMany({
-  //   where: { id: {
-  //     in: ['0aabe810-304c-4c10-8380-770f755c1d89']
-  //   }, 
-  //   picture: null},
-  //   data: {
-  //     picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/kraft-main.png')),
-  //     type: 'image/png'
-  //   }
-  // });
-
-  // await prisma.picture.updateMany({
-  //   where: { id: {
-  //     in: ['0daaa188-43a8-4089-be9c-487d03cdbbd0']
-  //   }, 
-  //   picture: null},
-  //   data: {
-  //     picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/kraft-texture.png')),
-  //     type: 'image/png'
-  //   }
-  // });
-
-  //NEWS
-  // await prisma.picture.updateMany({
-  //   where: { id: 'b486a497-82aa-419a-9921-b3a567fff653', picture: null },
-  //   data: {
-  //     picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/news-1.png')),
-  //     type: 'image/png'
-  //   }
-  // });
-
-  // await prisma.picture.updateMany({
-  //   where: { id: '13d88676-f686-462e-840b-e868294b47fb', picture: null },
-  //   data: {
-  //     picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/news-2.png')),
-  //     type: 'image/png'
-  //   }
-  // });
-
-  // await prisma.picture.updateMany({
-  //   where: { id: '7b4a066d-2876-4444-a318-4945dfa967f6', picture: null },
-  //   data: {
-  //     picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/news-3.png')),
-  //     type: 'image/png'
-  //   }
-  // });
-
-  // await prisma.picture.updateMany({
-  //   where: { id: '74e53ba1-c891-4f52-81a3-0cc609be4ac0', picture: null },
-  //   data: {
-  //     picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/news-4.png')),
-  //     type: 'image/png'
-  //   }
-  // });
+  //Collage-FOOTER
+  await prisma.picture.updateMany({
+    where: { id: 'a8b2aef7-2b3d-462d-8bcd-79cea4e9a4f6', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/collage/footer/1.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: '7b8e5a80-a42e-4bb2-b38a-6f2e20e08265', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/collage/footer/2.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: '8126ed39-f55b-4790-ab0c-490686ff66dc', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/collage/footer/3.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: '6f13ab40-791e-49cc-bf37-25bfa986de7e', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/collage/footer/4.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: '6dfaee3f-7a5d-40ed-add3-438afdb1a7cc', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/collage/footer/5.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: '00ec2c25-bbb9-4bda-8a54-aabf84d131e1', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/collage/footer/6.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: 'b0bb4c39-9909-471d-8049-c33fca3f1fce', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/collage/footer/7.png')),
+      type: 'image/png'
+    }
+  });
 }
 main()
   .then(async () => {

@@ -84,7 +84,8 @@ VALUES
 ('8126ed39-f55b-4790-ab0c-490686ff66dc', null,  null),
 ('6f13ab40-791e-49cc-bf37-25bfa986de7e', null,  null),
 ('6dfaee3f-7a5d-40ed-add3-438afdb1a7cc', null,  null),
-('00ec2c25-bbb9-4bda-8a54-aabf84d131e1', null,  null);
+('00ec2c25-bbb9-4bda-8a54-aabf84d131e1', null,  null),
+('b0bb4c39-9909-471d-8049-c33fca3f1fce', null,  null);
 
 INSERT INTO "Collage" (id, "pictureId", type, "order")
 VALUES 
@@ -93,7 +94,8 @@ VALUES
 ('449a9ef3-1a87-4e38-8803-a5376df5f407', '8126ed39-f55b-4790-ab0c-490686ff66dc',  'FOOTER', 2),
 ('6232a1e3-7126-4521-b331-3b9bd7ab2d82', '6f13ab40-791e-49cc-bf37-25bfa986de7e',  'FOOTER', 3),
 ('a8f67e9b-32d1-47d3-9f9b-6fd03cf3c3a3', '6dfaee3f-7a5d-40ed-add3-438afdb1a7cc',  'FOOTER', 4),
-('b199c17c-7610-45e5-9d1a-adec34e4dc04', '00ec2c25-bbb9-4bda-8a54-aabf84d131e1',  'FOOTER', 5);
+('b199c17c-7610-45e5-9d1a-adec34e4dc04', '00ec2c25-bbb9-4bda-8a54-aabf84d131e1',  'FOOTER', 5),
+('a95d7a0b-cbe3-4b00-a131-494cba599516', 'b0bb4c39-9909-471d-8049-c33fca3f1fce',  'FOOTER', 6);
 
 -- Collage Favor
 INSERT INTO "Picture" (id, picture, type)
