@@ -25,7 +25,7 @@ import { FilmingService } from 'src/services/filming.service';
   
     @Post('create')
     @UseInterceptors(FileInterceptor('file'))
-    async CreateFavor(@UploadedFile() file: Express.Multer.File, @Body() filming: CreateFilmingDto) {
+    async CreateFilming(@UploadedFile() file: Express.Multer.File, @Body() filming: CreateFilmingDto) {
       console.log(file);
       const result = await this.filmingService.createFilming({path: file?.path, type: file?.mimetype}, filming)
       return result;
@@ -33,14 +33,14 @@ import { FilmingService } from 'src/services/filming.service';
 
     @Post('update')
     @UseInterceptors(FileInterceptor('file'))
-    async updateFavor(@UploadedFile() file: Express.Multer.File, @Body() filming: UpdateFilmingDto) {
+    async updateFilming(@UploadedFile() file: Express.Multer.File, @Body() filming: UpdateFilmingDto) {
       console.log(file);
       const result = await this.filmingService.updateFilming({path: file?.path, type: file?.mimetype}, filming);
       return result;
     }
 
     @Get('/:id')
-    async getEquipmentById(@Param('id') id: string): Promise<GetFilmingDto> {
+    async getFilmingById(@Param('id') id: string): Promise<GetFilmingDto> {
       return this.filmingService.getById(id);
     }
   
@@ -50,7 +50,7 @@ import { FilmingService } from 'src/services/filming.service';
     }
 
     @Delete('/:id')
-    async deleteEquipment(@Param('id') id: string): Promise<Filming> {
+    async deleteFilming(@Param('id') id: string): Promise<Filming> {
       return this.filmingService.deleteFilming(id);
     }
 

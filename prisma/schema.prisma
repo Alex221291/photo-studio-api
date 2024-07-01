@@ -44,7 +44,8 @@ model Filming {
   title     String?
   description   String? @db.VarChar(2000)
   order     Int?
-  price     String?
+  price     Float?
+  otherPrice     Float?
   picture    Picture?    @relation(fields: [pictureId], references: [id])
   pictureId  String? @default(uuid())
 }
@@ -58,6 +59,7 @@ model Picture {
   equipment Equipment[]
   favor Favor[]
   collage Collage[]
+  promotion Promotion[]
 }
 
 model News {
@@ -84,4 +86,15 @@ enum Type {
   FOOTER
   FAVOR
   OTHER
+}
+
+
+model Promotion {
+  id    String     @default(uuid()) @id
+  title     String?
+  description   String? @db.VarChar(2000)
+  savings     Int?
+  date DateTime @default(now())
+  picture    Picture?    @relation(fields: [pictureId], references: [id])
+  pictureId  String? @default(uuid())
 }

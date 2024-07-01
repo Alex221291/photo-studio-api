@@ -40,7 +40,8 @@ CREATE TABLE "Filming" (
     "title" TEXT,
     "description" VARCHAR(2000),
     "order" INTEGER,
-    "price" TEXT,
+    "price" DOUBLE PRECISION,
+    "otherPrice" DOUBLE PRECISION,
     "pictureId" TEXT,
 
     CONSTRAINT "Filming_pkey" PRIMARY KEY ("id")
@@ -78,6 +79,18 @@ CREATE TABLE "Collage" (
     CONSTRAINT "Collage_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "Promotion" (
+    "id" TEXT NOT NULL,
+    "title" TEXT,
+    "description" VARCHAR(2000),
+    "savings" INTEGER,
+    "date" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "pictureId" TEXT,
+
+    CONSTRAINT "Promotion_pkey" PRIMARY KEY ("id")
+);
+
 -- AddForeignKey
 ALTER TABLE "Equipment" ADD CONSTRAINT "Equipment_pictureId_fkey" FOREIGN KEY ("pictureId") REFERENCES "Picture"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
@@ -92,3 +105,6 @@ ALTER TABLE "News" ADD CONSTRAINT "News_pictureId_fkey" FOREIGN KEY ("pictureId"
 
 -- AddForeignKey
 ALTER TABLE "Collage" ADD CONSTRAINT "Collage_pictureId_fkey" FOREIGN KEY ("pictureId") REFERENCES "Picture"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Promotion" ADD CONSTRAINT "Promotion_pictureId_fkey" FOREIGN KEY ("pictureId") REFERENCES "Picture"("id") ON DELETE SET NULL ON UPDATE CASCADE;

@@ -25,7 +25,7 @@ import { NewsService } from 'src/services/news.service';
   
     @Post('create')
     @UseInterceptors(FileInterceptor('file'))
-    async createnews(@UploadedFile() file: Express.Multer.File, @Body() news: CreateNewsDto) {
+    async createNews(@UploadedFile() file: Express.Multer.File, @Body() news: CreateNewsDto) {
       console.log(file);
       const result = await this.newsService.createNews({path: file?.path, type: file?.mimetype}, news)
       return result;

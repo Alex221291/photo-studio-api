@@ -4,5 +4,6 @@ export class UpdateFilmingDto {
     readonly title?: string;
     readonly description?: string;
     readonly order?: number;
-    readonly price?: string;
+    readonly price?: number;
+    readonly otherPrice?: number;
 }

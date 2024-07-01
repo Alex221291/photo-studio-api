@@ -17,12 +17,14 @@ import { FilmingController } from './controllers/filming.controller';
 import { EquipmentController } from './controllers/equipment.controller';
 import { CollageService } from './services/collage.service';
 import { CollageController } from './controllers/collage.controller';
+import { PromotionController } from './controllers/promotion.controller';
+import { PromotionService } from './services/promotion.service';
 
 @Module({
   imports: [MulterModule.register({
     dest: './uploads',
   }),],
-  controllers: [ PictureController, AppController, NewsController, TariffController, EquipmentController, FavorController, FilmingController, CollageController],
-  providers: [ PrismaService, PictureService, FileService, NewsService, TariffService, EquipmentService, FavorService, FilmingService, CollageService],
+  controllers: [ PictureController, AppController, NewsController, TariffController, EquipmentController, FavorController, FilmingController, CollageController, PromotionController],
+  providers: [ PrismaService, PictureService, FileService, NewsService, TariffService, EquipmentService, FavorService, FilmingService, CollageService, PromotionService],
 })
 export class AppModule {}

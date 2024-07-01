@@ -192,6 +192,22 @@ async function main() {
       type: 'image/png'
     }
   });
+
+  //Promotion
+  await prisma.picture.updateMany({
+    where: { id: 'e4aee6e7-97ff-4d33-8806-67c8d1446a83', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/promotion/cake.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: '24716174-9237-466d-87a0-6c230cd8112c', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/promotion/clock.png')),
+      type: 'image/png'
+    }
+  }); 
 }
 main()
   .then(async () => {

@@ -5,6 +5,7 @@ export class GetFilmingDto {
     readonly title?: string;
     readonly description?: string;
     readonly order?: number;
-    readonly price?: string;
+    readonly price?: number;
+    readonly otherPrice?: number;
     readonly pictureId?: string;
 }

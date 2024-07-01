@@ -25,7 +25,7 @@ import { EquipmentService } from 'src/services/equipment.service';
   
     @Post('create')
     @UseInterceptors(FileInterceptor('file'))
-    async CreateFavor(@UploadedFile() file: Express.Multer.File, @Body() equipment: CreateEquipmentDto) {
+    async CreateEquipment(@UploadedFile() file: Express.Multer.File, @Body() equipment: CreateEquipmentDto) {
       console.log(file);
       const result = await this.equipmentService.createEquipment({path: file?.path, type: file?.mimetype}, equipment)
       return result;
@@ -33,7 +33,7 @@ import { EquipmentService } from 'src/services/equipment.service';
 
     @Post('update')
     @UseInterceptors(FileInterceptor('file'))
-    async updateFavor(@UploadedFile() file: Express.Multer.File, @Body() equipment: UpdateEquipmentDto) {
+    async updateEquipment(@UploadedFile() file: Express.Multer.File, @Body() equipment: UpdateEquipmentDto) {
       console.log(file);
       const result = await this.equipmentService.updateEquipment({path: file?.path, type: file?.mimetype}, equipment);
       return result;
