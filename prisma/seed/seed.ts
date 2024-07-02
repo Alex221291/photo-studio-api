@@ -34,6 +34,36 @@ async function main() {
     }
   });
 
+  // Equipment duplicate
+  await prisma.picture.updateMany({
+    where: { id: '75116e3d-fcc7-4029-bcd3-fc04e2db49bf', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/equipment/godox.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: 'af59c4a7-2ddb-40c1-8197-9da08264ae04', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/equipment/fotokvant.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: 'd4933d82-2927-4fd2-96a1-57307e27719b', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/equipment/softbox.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: '21ff7d16-2d29-43d2-a430-ee7a054ea63b', picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/equipment/octabox.png')),
+      type: 'image/png'
+    }
+  });
+
   // Favor
   await prisma.picture.updateMany({
     where: { id: '704d7014-cc95-401d-a73e-4dbebdeaf560', picture: null },
