@@ -47,10 +47,10 @@ VALUES
 
 INSERT INTO "Filming" (id, title, description, "order", price, "otherPrice", "pictureId")
 VALUES
-('d398b7cf-6007-47f1-a3de-acfa9b2ebafd', 'Аренда фотостудии',  'Хит', 0, null, null, '382a4a5c-8555-4329-ab6e-3212d9aafdc0'),
+('d398b7cf-6007-47f1-a3de-acfa9b2ebafd', 'Аренда фотостудии',  'Хит', 0, 900, null, '382a4a5c-8555-4329-ab6e-3212d9aafdc0'),
 ('4bd77d27-c9eb-4178-bba4-4773fb48a4aa', 'Фотограф Дарья',  '8 лет опыта', 1, 4500, 1000, 'e463a386-5475-48ae-800a-4d59b49a5e4e'),
-('821d31bd-53e3-4bd7-92af-f2c6b72177fa', 'Фотограф Александр', '14 лет опыта', 2, null, null, '4916e275-059e-44d9-9c08-59d371fca9d6'),
-('cbda57c3-013f-4c50-b576-782f0a3df626', 'Абонимент на фотосъемку',  '', 3, null, null, 'af60e668-47c1-41fb-9893-0df48cb625bd');
+('821d31bd-53e3-4bd7-92af-f2c6b72177fa', 'Фотограф Александр', '14 лет опыта', 2, 7500, 1000, '4916e275-059e-44d9-9c08-59d371fca9d6'),
+('cbda57c3-013f-4c50-b576-782f0a3df626', 'Абонимент на фотосъемку',  '', 3, 900, null, 'af60e668-47c1-41fb-9893-0df48cb625bd');
 
 -- NEWS
 INSERT INTO "Picture" (id, picture, type)
