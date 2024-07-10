@@ -19,12 +19,14 @@ import { CollageService } from './services/collage.service';
 import { CollageController } from './controllers/collage.controller';
 import { PromotionController } from './controllers/promotion.controller';
 import { PromotionService } from './services/promotion.service';
+import { MailService } from './services/mail.service';
+import { MailController } from './controllers/mail.controller';
 
 @Module({
   imports: [MulterModule.register({
     dest: './uploads',
   }),],
-  controllers: [ PictureController, AppController, NewsController, TariffController, EquipmentController, FavorController, FilmingController, CollageController, PromotionController],
-  providers: [ PrismaService, PictureService, FileService, NewsService, TariffService, EquipmentService, FavorService, FilmingService, CollageService, PromotionService],
+  controllers: [ PictureController, AppController, NewsController, TariffController, EquipmentController, FavorController, FilmingController, CollageController, PromotionController, MailController],
+  providers: [ PrismaService, PictureService, FileService, NewsService, TariffService, EquipmentService, FavorService, FilmingService, CollageService, PromotionService, MailService],
 })
 export class AppModule {}
