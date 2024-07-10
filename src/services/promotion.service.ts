@@ -6,6 +6,8 @@ import { GetPromotionDto } from 'src/dto/promotion/get-promotion.dto';
 import { CreatePromotionDto } from 'src/dto/promotion/create-promotion.dto';
 import { UpdatePromotionDto } from 'src/dto/promotion/update-promotion.dto';
 import { createReadStream } from 'fs';
+import * as moment from 'moment';
+moment.locale('ru');
 @Injectable()
 export class PromotionService {
   constructor(private prisma: PrismaService, 
@@ -24,6 +26,9 @@ export class PromotionService {
       description: answer?.description,
       savings: answer?.savings,
       pictureId: answer?.pictureId,
+      subject: answer?.subject,
+      time: answer?.time,
+      date: moment(answer?.date).format('D MMMM YYYY'),
     };
   }
 
@@ -39,6 +44,9 @@ export class PromotionService {
         description: item?.description,
         savings: item?.savings,
         pictureId: item?.pictureId,
+        subject: item?.subject,
+        time: item?.time,
+        date: moment(item?.date).format('D MMMM YYYY'),
       }
     })
   }
@@ -71,7 +79,9 @@ export class PromotionService {
         title: promotion?.title,
         description: promotion?.description,
         savings: promotion?.savings,
-        pictureId: picture?.id
+        pictureId: picture?.id,
+        subject: promotion?.subject,
+        time: promotion?.time,
       },
     });
   }
@@ -115,7 +125,9 @@ export class PromotionService {
         title: promotion?.title,
         description: promotion?.description,
         savings: promotion?.savings,
-        pictureId: picture?.id
+        pictureId: picture?.id,
+        subject: promotion?.subject,
+        time: promotion?.time,
       },
     });
   }

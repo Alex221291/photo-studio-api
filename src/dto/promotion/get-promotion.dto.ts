@@ -6,4 +6,7 @@ export class GetPromotionDto {
     readonly description?: string;
     readonly savings?: number;
     readonly pictureId?: string;
+    readonly date?: string;
+    readonly subject?: string;
+    readonly time?: number;
 }

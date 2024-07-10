@@ -225,14 +225,20 @@ async function main() {
 
   //Promotion
   await prisma.picture.updateMany({
-    where: { id: 'e4aee6e7-97ff-4d33-8806-67c8d1446a83', picture: null },
+    where: { id: {
+      in:['e4aee6e7-97ff-4d33-8806-67c8d1446a83', '76b3a45f-d170-435e-b5e7-79b1f28c66e5', '3219c218-c74f-40fc-953c-417463eaac7b']
+    }, 
+      picture: null },
     data: {
       picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/promotion/cake.png')),
       type: 'image/png'
     }
   });
   await prisma.picture.updateMany({
-    where: { id: '24716174-9237-466d-87a0-6c230cd8112c', picture: null },
+    where: { id: {
+      in:['24716174-9237-466d-87a0-6c230cd8112c', '991ff55d-84ed-4015-8aca-98223cf40ed3', 'a9c29a8a-1a21-47c8-870e-245e9072b179']
+    }, 
+    picture: null },
     data: {
       picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/promotion/clock.png')),
       type: 'image/png'

@@ -95,6 +95,8 @@ model Promotion {
   description   String? @db.VarChar(2000)
   savings     Int?
   date DateTime @default(now())
+  subject String?
+  time Int?
   picture    Picture?    @relation(fields: [pictureId], references: [id])
   pictureId  String? @default(uuid())
 }

@@ -86,6 +86,8 @@ CREATE TABLE "Promotion" (
     "description" VARCHAR(2000),
     "savings" INTEGER,
     "date" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "subject" TEXT,
+    "time" INTEGER,
     "pictureId" TEXT,
 
     CONSTRAINT "Promotion_pkey" PRIMARY KEY ("id")
