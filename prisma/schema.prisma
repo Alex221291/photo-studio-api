@@ -25,6 +25,7 @@ model Equipment {
   id    String     @default(uuid()) @id
   title     String?
   description   String? @db.VarChar(2000)
+  type    EquipmentType     @default(EQUIPMENT)
   picture    Picture?    @relation(fields: [pictureId], references: [id])
   pictureId  String? @default(uuid())
 }
@@ -99,4 +100,10 @@ model Promotion {
   time Int?
   picture    Picture?    @relation(fields: [pictureId], references: [id])
   pictureId  String? @default(uuid())
+}
+
+enum EquipmentType {
+  DRESS
+  EQUIPMENT
+  REQUISITE
 }

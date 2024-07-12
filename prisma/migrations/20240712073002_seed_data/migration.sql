@@ -14,12 +14,12 @@ VALUES
 ('ca97fb08-becf-4e27-8edf-5c098205809e', null,  null),
 ('a18bfbca-f558-4b21-a15f-e6c73aed1561', null,  null);
 
-INSERT INTO "Equipment" (id, title, description, "pictureId")
+INSERT INTO "Equipment" (id, title, description, type, "pictureId")
 VALUES 
-('574689ee-ff18-44f6-8bd9-b52eb6cb26d9', 'Godox Sk300II', 'Комплект студийного света', '49f014c7-9c01-400c-ace6-490896838b9d'),
-('36336b49-eff3-4c9a-b205-7d9d7532bdf5', 'Fotokvant BF-300B', 'Светодиодный осветитель', '57adae36-64ab-4d77-ba70-8dd272877bac'),
-('757aa8df-1622-4f0f-8de2-99c6cd65e9f0', 'от 60х60см до 80х120см', 'Софтбоксы', 'ca97fb08-becf-4e27-8edf-5c098205809e'),
-('48537786-e138-40a1-a6c6-25e4ca6412a5', '120 и 140см', 'Октабоксы', 'a18bfbca-f558-4b21-a15f-e6c73aed1561');
+('574689ee-ff18-44f6-8bd9-b52eb6cb26d9', 'Godox Sk300II', 'Комплект студийного света', 'EQUIPMENT', '49f014c7-9c01-400c-ace6-490896838b9d'),
+('36336b49-eff3-4c9a-b205-7d9d7532bdf5', 'Fotokvant BF-300B', 'Светодиодный осветитель', 'EQUIPMENT', '57adae36-64ab-4d77-ba70-8dd272877bac'),
+('757aa8df-1622-4f0f-8de2-99c6cd65e9f0', 'от 60х60см до 80х120см', 'Софтбоксы', 'EQUIPMENT', 'ca97fb08-becf-4e27-8edf-5c098205809e'),
+('48537786-e138-40a1-a6c6-25e4ca6412a5', '120 и 140см', 'Октабоксы', 'EQUIPMENT', 'a18bfbca-f558-4b21-a15f-e6c73aed1561');
 
 -- Favor
 INSERT INTO "Picture" (id, picture, type)
@@ -141,3 +141,33 @@ VALUES
  ('b9c8c831-2085-4a7f-8958-521d5bbd628f', 'Бронировании любого зала от 3-х часов', 
 'От 6-ти часов скидка -25%. От 9-ти часов -30%. Действительно только по будням. Применяется автоматически.', 
  25, 'Акции', 7, '2024-07-05T00:00:00.000Z', 'a9c29a8a-1a21-47c8-870e-245e9072b179');
+
+
+ -- Equipment дубликаты разных типов
+INSERT INTO "Picture" (id, picture, type)
+VALUES 
+('6eaa5312-b822-4fb1-99b0-1d8641d19566', null,  null),
+('96f55754-30cb-4fb9-befc-35c486e49ffe', null,  null),
+('42c9423a-4fb9-4de7-9936-72e0416e3636', null,  null),
+('0f9ba1eb-7e61-4dee-abe7-7fa47c940aed', null,  null);
+
+INSERT INTO "Equipment" (id, title, description, type, "pictureId")
+VALUES 
+('94e5aeb7-1eda-4b98-82cf-b4e8d635fb4e', 'Платье', 'Красное', 'DRESS', '6eaa5312-b822-4fb1-99b0-1d8641d19566'),
+('3cc7d72a-1221-4166-9b09-d3345191cc1c', 'Платье', 'Чёрное', 'DRESS', '96f55754-30cb-4fb9-befc-35c486e49ffe'),
+('c0f601f0-ecda-4c03-9de7-4fa196e5c9da', 'Платье', 'Зелёное', 'DRESS', '42c9423a-4fb9-4de7-9936-72e0416e3636'),
+('e6686743-2300-437d-890b-ee90fc44dc5c', 'Платье', 'Синее', 'DRESS', '0f9ba1eb-7e61-4dee-abe7-7fa47c940aed');
+
+INSERT INTO "Picture" (id, picture, type)
+VALUES 
+('c376534f-2bfa-4bcf-970b-9b76fdc682c0', null,  null),
+('f20ab86c-5c46-4c4d-808f-062073e0cb54', null,  null),
+('288d0e4c-a695-4c2e-a796-8ff2decacb97', null,  null),
+('e2cc3de5-077d-4b71-9323-96be0fc17b44', null,  null);
+
+INSERT INTO "Equipment" (id, title, description, type, "pictureId")
+VALUES 
+('419af6fd-c011-4cc6-a77f-15894088b2dc', 'Кресло', 'Красное', 'REQUISITE', 'c376534f-2bfa-4bcf-970b-9b76fdc682c0'),
+('a6160f48-373a-4408-92e8-2dc991073a08', 'Кресло', 'Чёрное', 'REQUISITE', 'f20ab86c-5c46-4c4d-808f-062073e0cb54'),
+('d572fcae-002e-466c-a672-84867c7a3855', 'Кресло', 'Зелёное', 'REQUISITE', '288d0e4c-a695-4c2e-a796-8ff2decacb97'),
+('56572e10-b81d-4417-bf28-4c732a6b9be1', 'Кресло', 'Синее', 'REQUISITE', 'e2cc3de5-077d-4b71-9323-96be0fc17b44');

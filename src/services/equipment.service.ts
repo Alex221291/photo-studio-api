@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from './prisma.service';
-import { Equipment, Picture } from '@prisma/client';
+import { $Enums, Equipment, Picture } from '@prisma/client';
 import { createReadStream } from 'fs';
 import { FileService } from './file.service';
 import { GetEquipmentDto } from 'src/dto/equipment/get-equipment.dto';
@@ -16,12 +16,33 @@ export class EquipmentService {
     const result =  await this.prisma.equipment.findUnique({
       where: {id},
     });
+
     return result;
+    // if(!result) return null;
+
+    // return {
+    //   id: result?.id,
+    //   title: result?.title,
+    //   description: result?.description,
+    //   pictureId: result?.pictureId,
+    //   type: EquipmentTypes[result?.type],
+    // };
   }
 
   async getAll(): Promise<GetEquipmentDto[]> {
     const result =  await this.prisma.equipment.findMany({});
+
     return result;
+
+    // return result.map(item => {
+    //   return {
+    //     id: item?.id,
+    //     title: item?.title,
+    //     description: item?.description,
+    //     pictureId: item?.pictureId,
+    //     type: EquipmentTypes[item?.type],
+    //   };
+    // });
   }
 
   async createEquipment(fileInfo?: {path: string, type: string}, equipment?: CreateEquipmentDto): Promise<Equipment> {
@@ -51,6 +72,7 @@ export class EquipmentService {
       data: {
         title: equipment?.title,
         description: equipment?.description,
+        type: $Enums.EquipmentType[equipment?.type] || $Enums.EquipmentType[EquipmentTypes.EQUIPMENT],
         pictureId: picture?.id
       },
     });
@@ -94,6 +116,7 @@ export class EquipmentService {
       data: {
         title: equipment?.title,
         description: equipment?.description,
+        type: $Enums.EquipmentType[equipment?.type] || $Enums.EquipmentType[EquipmentTypes.EQUIPMENT],
         pictureId: picture?.id
       },
     });

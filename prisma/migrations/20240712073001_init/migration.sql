@@ -1,6 +1,9 @@
 -- CreateEnum
 CREATE TYPE "Type" AS ENUM ('HEADER', 'FOOTER', 'FAVOR', 'OTHER');
 
+-- CreateEnum
+CREATE TYPE "EquipmentType" AS ENUM ('DRESS', 'EQUIPMENT', 'REQUISITE');
+
 -- CreateTable
 CREATE TABLE "Tariff" (
     "id" TEXT NOT NULL,
@@ -17,6 +20,7 @@ CREATE TABLE "Equipment" (
     "id" TEXT NOT NULL,
     "title" TEXT,
     "description" VARCHAR(2000),
+    "type" "EquipmentType" NOT NULL DEFAULT 'EQUIPMENT',
     "pictureId" TEXT,
 
     CONSTRAINT "Equipment_pkey" PRIMARY KEY ("id")

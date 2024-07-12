@@ -244,6 +244,29 @@ async function main() {
       type: 'image/png'
     }
   }); 
+
+
+  // Equipment: dress and requisite
+  await prisma.picture.updateMany({
+    where: { id: {
+      in:['6eaa5312-b822-4fb1-99b0-1d8641d19566', '96f55754-30cb-4fb9-befc-35c486e49ffe', '42c9423a-4fb9-4de7-9936-72e0416e3636', '0f9ba1eb-7e61-4dee-abe7-7fa47c940aed', ]
+    }, 
+     picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/favor/dress.png')),
+      type: 'image/png'
+    }
+  });
+  await prisma.picture.updateMany({
+    where: { id: {
+      in:['c376534f-2bfa-4bcf-970b-9b76fdc682c0', 'f20ab86c-5c46-4c4d-808f-062073e0cb54', '288d0e4c-a695-4c2e-a796-8ff2decacb97', 'e2cc3de5-077d-4b71-9323-96be0fc17b44', ]
+    }, 
+    picture: null },
+    data: {
+      picture: fs.readFileSync(path.join(__dirname, '../seed/seed-pictures/favor/kreslo.png')),
+      type: 'image/png'
+    }
+  });
 }
 main()
   .then(async () => {
