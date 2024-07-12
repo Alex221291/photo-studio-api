@@ -54,7 +54,6 @@ export class FilmingService {
       data: {
         title: filming?.title,
         description: filming?.description,
-        order: filming?.order,
         price: filming?.price,
         otherPrice: filming?.otherPrice,
         pictureId: picture?.id
@@ -100,7 +99,6 @@ export class FilmingService {
       data: {
         title: filming?.title,
         description: filming?.description,
-        order: filming?.order,
         price: filming?.price,
         otherPrice: filming?.otherPrice,
         pictureId: picture?.id

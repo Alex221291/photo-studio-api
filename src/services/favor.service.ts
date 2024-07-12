@@ -54,7 +54,6 @@ export class FavorService {
       data: {
         title: favor?.title,
         description: favor?.description,
-        order: favor?.order,
         count: favor?.count,
         pictureId: picture?.id
       },
@@ -99,7 +98,6 @@ export class FavorService {
       data: {
         title: favor?.title,
         description: favor?.description,
-        order: favor?.order,
         count: favor?.count,
         pictureId: picture?.id
       },
