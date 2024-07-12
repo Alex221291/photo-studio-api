@@ -106,9 +106,9 @@ export class NewsService {
 
     await this.fileService.deleteFile(fileInfo?.path);
 
-    await this.prisma.picture.delete({
+    await this.prisma.picture.deleteMany({
       where : {
-        id: updateNews?.pictureId
+        id: updateNews?.pictureId || ''
       }
     });
     
@@ -129,9 +129,9 @@ export class NewsService {
   async deleteNews(id: string): Promise<News> {
     const deleteNews = await this.getById(id);
 
-    await this.prisma.picture.delete({
+    await this.prisma.picture.deleteMany({
       where : {
-        id: deleteNews?.pictureId
+        id: deleteNews?.pictureId || ''
       }
     });
 

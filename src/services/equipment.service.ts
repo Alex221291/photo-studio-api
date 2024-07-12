@@ -103,9 +103,9 @@ export class EquipmentService {
 
     await this.fileService.deleteFile(fileInfo?.path);
 
-    await this.prisma.picture.delete({
+    await this.prisma.picture.deleteMany({
       where : {
-        id: updateEquipment?.pictureId
+        id: updateEquipment?.pictureId || ''
       }
     });
     
@@ -127,7 +127,7 @@ export class EquipmentService {
 
     await this.prisma.picture.delete({
       where : {
-        id: deleteEquipment?.pictureId
+        id: deleteEquipment?.pictureId || ''
       }
     });
 

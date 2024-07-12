@@ -87,9 +87,9 @@ export class FilmingService {
 
     await this.fileService.deleteFile(fileInfo?.path);
 
-    await this.prisma.picture.delete({
+    await this.prisma.picture.deleteMany({
       where : {
-        id: updateFilming?.pictureId
+        id: updateFilming?.pictureId || ''
       }
     });
     
@@ -111,9 +111,9 @@ export class FilmingService {
   async deleteFilming(id: string): Promise<Filming> {
     const deleteFavor = await this.getById(id);
 
-    await this.prisma.picture.delete({
+    await this.prisma.picture.deleteMany({
       where : {
-        id: deleteFavor?.pictureId
+        id: deleteFavor?.pictureId || ''
       }
     });
 

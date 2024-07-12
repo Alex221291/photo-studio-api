@@ -111,9 +111,9 @@ export class PromotionService {
 
     await this.fileService.deleteFile(fileInfo?.path);
 
-    await this.prisma.picture.delete({
+    await this.prisma.picture.deleteMany({
       where : {
-        id: updatePromotion?.pictureId
+        id: updatePromotion?.pictureId || ''
       }
     });
     
@@ -135,9 +135,9 @@ export class PromotionService {
   async deletePromotion(id: string): Promise<Promotion> {
     const deletePromotion = await this.getById(id);
 
-    await this.prisma.picture.delete({
+    await this.prisma.picture.deleteMany({
       where : {
-        id: deletePromotion?.pictureId
+        id: deletePromotion?.pictureId || ''
       }
     });
 

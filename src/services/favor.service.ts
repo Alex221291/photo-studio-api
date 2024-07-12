@@ -86,9 +86,9 @@ export class FavorService {
 
     await this.fileService.deleteFile(fileInfo?.path);
 
-    await this.prisma.picture.delete({
+    await this.prisma.picture.deleteMany({
       where : {
-        id: updateFavor?.pictureId
+        id: updateFavor?.pictureId || ''
       }
     });
     
@@ -109,9 +109,9 @@ export class FavorService {
   async deleteFavor(id: string): Promise<Favor> {
     const deleteFavor = await this.getById(id);
 
-    await this.prisma.picture.delete({
+    await this.prisma.picture.deleteMany({
       where : {
-        id: deleteFavor?.pictureId
+        id: deleteFavor?.pictureId || ''
       }
     });
 
