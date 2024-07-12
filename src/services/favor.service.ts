@@ -82,9 +82,9 @@ export class FavorService {
           type: fileInfo?.type || 'image/png',
         },
       });
-    }
 
-    await this.fileService.deleteFile(fileInfo?.path);
+      await this.fileService.deleteFile(fileInfo?.path);
+    }
 
     await this.prisma.picture.deleteMany({
       where : {
