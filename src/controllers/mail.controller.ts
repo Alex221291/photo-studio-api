@@ -22,8 +22,9 @@ import { MailService } from 'src/services/mail.service';
 phone: ${data?.phone}
 email: ${data?.email}
 question: ${data?.question}`;
+
         await this.mailService.sendMail(data?.email, 'Вы задали вопрос', text);
-        //await this.mailService.sendMail(process.env.PAPER_EMAIL, 'Вопрос клиента', text);
+        //await this.mailService.sendMail(process.env.MAIN_EMAIL, 'Вопрос клиента', text);
 
         return;
       } catch (error) {
