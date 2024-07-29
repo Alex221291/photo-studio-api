@@ -86,7 +86,7 @@ export class PromotionService {
     });
   }
 
-  async updatePromotion(fileInfo?: {path: string, type: string}, promotion?: UpdatePromotionDto): Promise<Promotion> {
+  async updatePromotion(fileInfo?: {path?: string, type?: string}, promotion?: UpdatePromotionDto): Promise<Promotion> {
     let fileData: Buffer;
     let picture: Picture;
 
@@ -107,9 +107,9 @@ export class PromotionService {
           type: fileInfo?.type || 'image/png',
         },
       });
-    }
 
-    await this.fileService.deleteFile(fileInfo?.path);
+      await this.fileService.deleteFile(fileInfo?.path);
+    }
 
     await this.prisma.picture.deleteMany({
       where : {
