@@ -22,13 +22,13 @@ import { TariffService } from 'src/services/tariff.service';
     ) {}
   
     @Post()
-    async createTariff(@Body() tariff: CreateTariffDto): Promise<Tariff> {
+    async createTariff(@Body() tariff: CreateTariffDto): Promise<GetTariffDto> {
       const result = await this.tariffService.createTariff(tariff);
       return result;
     }
 
     @Put()
-    async updateTariff(@Body() tariff: UpdateTariffDto): Promise<Tariff> {
+    async updateTariff(@Body() tariff: UpdateTariffDto): Promise<GetTariffDto> {
       const result = await this.tariffService.updateTariff(tariff);
       return result;
     }
@@ -44,7 +44,7 @@ import { TariffService } from 'src/services/tariff.service';
     }
 
     @Delete('/:id')
-    async deletePaper(@Param('id') id: string): Promise<Tariff> {
+    async deletePaper(@Param('id') id: string): Promise<GetTariffDto> {
       return this.tariffService.deleteTariff(id);
     }
 

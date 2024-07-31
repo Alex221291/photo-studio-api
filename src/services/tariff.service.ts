@@ -14,9 +14,8 @@ export class TariffService {
     });
     return {
       id: result?.id,
-      timeInterval: result?.timeInterval,
-      options: result?.options?.split('@#$'),
-      savings: result?.savings,
+      caption: result?.timeInterval,
+      description: result?.options,
       price: result?.price,
     };
   }
@@ -28,40 +27,48 @@ export class TariffService {
     return tariffs?.map(tariff => {
       return {
         id: tariff?.id,
-        timeInterval: tariff?.timeInterval,
-        options: tariff?.options?.split('@#$'),
-        savings: tariff?.savings,
+        caption: tariff?.timeInterval,
+        description: tariff?.options,
         price: tariff?.price,
       };
     });
   }
 
-  async createTariff(tariff: CreateTariffDto): Promise<Tariff> {
-    return await this.prisma.tariff.create({
+  async createTariff(tariff: CreateTariffDto): Promise<GetTariffDto> {
+    const result = await this.prisma.tariff.create({
       data: {
-        timeInterval: tariff?.timeInterval,
-        options: tariff?.options?.join('@#$'),
-        savings: tariff?.savings,
+        timeInterval: tariff?.caption,
+        options: tariff?.description,
         price: tariff?.price,
       },
     });
+
+    return await this.getById(result.id);
   }
 
-  async updateTariff(tariff: UpdateTariffDto): Promise<Tariff> {
-    return await this.prisma.tariff.update({
+  async updateTariff(tariff: UpdateTariffDto): Promise<GetTariffDto> {
+    const result = await this.prisma.tariff.update({
       data: {
-        timeInterval: tariff?.timeInterval,
-        options: tariff?.options?.join('@#$'),
-        savings: tariff?.savings,
+        timeInterval: tariff?.caption,
+        options: tariff?.description,
         price: tariff?.price,
       },
       where: {id: tariff.id},
     });
+
+    return await this.getById(result.id);
   }
 
-  async deleteTariff(id: string): Promise<Tariff> {
-    return await this.prisma.tariff.delete({
+  async deleteTariff(id: string): Promise<GetTariffDto> {
+    const result = await this.prisma.tariff.delete({
       where: {id},
     });
+
+    return {
+      id: result?.id,
+      caption: result?.timeInterval,
+      description: result?.options,
+      price: result?.price,
+    };
   }
 }
